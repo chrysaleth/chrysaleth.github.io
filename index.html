@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Natura</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="cutscene-container">
+        <div id="cutscene-text"></div>
+        <pre id="ascii-art"></pre>
+        <button id="continue-btn">Continue</button>
+    </div>
+
+    <div id="terminal-container" style="display:none; flex-direction: column;">
+        <div id="terminal-output"></div>
+        <div id="terminal-input-line">
+            <span>&gt;</span>
+            <input type="text" id="terminal-input" autocomplete="off" />
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
