@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,17 +9,17 @@
 </head>
 
 <body>
-    <div id="cutscene-container">
+    <div id="cutscene">
         <div id="cutscene-text"></div>
         <pre id="ascii-art"></pre>
         <button id="continue-btn">Continue</button>
     </div>
 
-    <div id="terminal-container" style="display:none; flex-direction: column;">
+    <div id="terminal" class="hidden">
         <div id="terminal-output"></div>
         <div id="terminal-input-line">
-            <span>&gt;</span>
-            <input type="text" id="terminal-input" autocomplete="off" />
+            <span id="prompt">C:\Natura></span>
+            <input type="text" id="terminal-input" autofocus autocomplete="off" />
         </div>
     </div>
 

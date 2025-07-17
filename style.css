@@ -1,99 +1,89 @@
-/* style.css (same as before, no changes needed for terminal) */
-
 body {
+    background-color: black;
+    color: #ccc;
+    font-family: monospace;
     margin: 0;
     padding: 0;
-    font-family: monospace;
-    background: #000;
-    color: #ccc;
+    height: 100vh;
+    overflow: hidden;
 }
 
-#cutscene-container {
+#cutscene {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
     text-align: center;
 }
 
 #cutscene-text {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-    color: #eee;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
 }
 
 #ascii-art {
+    overflow: hidden;
+    max-height: 600px;
     white-space: pre;
     font-family: monospace;
-    font-size: 12px;
-    line-height: 1.1em;
-    color: #ccc;
     text-align: center;
-    margin: 0 auto;
-    max-width: 100%;
-    overflow-x: auto;
+    font-size: 12px;
+    line-height: 1.1;
+    user-select: none;
 }
 
 #continue-btn {
-    margin-top: 1em;
-    padding: 0.5em 1em;
-    background: #111;
-    color: #999;
-    border: 1px solid #333;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #ccc;
+    border: 1px solid #555;
     cursor: not-allowed;
     opacity: 0.5;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 #continue-btn.enabled {
     cursor: pointer;
     opacity: 1;
-    color: #fff;
-    border-color: #666;
 }
 
-#terminal-container {
+.hidden {
     display: none;
-    flex-grow: 1;
+}
+
+#terminal {
+    display: none;
+    flex-direction: column;
     height: 100vh;
     padding: 10px;
     box-sizing: border-box;
-    color: #ccc;
-    background: #000;
-    font-family: monospace;
-    font-size: 14px;
-    overflow: hidden;
-    flex-direction: column;
+    overflow-y: auto;
 }
 
 #terminal-output {
+    white-space: pre-wrap;
     flex-grow: 1;
     overflow-y: auto;
-    white-space: pre-wrap;
     margin-bottom: 5px;
 }
 
 #terminal-input-line {
     display: flex;
-    align-items: center;
 }
 
-#terminal-input-line>span {
-    color: #ccc;
-    margin-right: 5px;
-    user-select: none;
+#prompt {
+    flex-shrink: 0;
 }
 
 #terminal-input {
-    background: #000;
+    flex-grow: 1;
+    background: none;
     border: none;
-    border-top: 1px solid #333;
-    color: #fff;
-    padding: 10px;
+    color: #ccc;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
-    width: 100%;
 }
