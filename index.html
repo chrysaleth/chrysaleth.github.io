@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avarice - Writings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Avarice</h1>
+        </header>
+
+        <main class="writings-grid">
+            <article class="writing-card" onclick="enlargeCard(this)">
+                <div class="writing-content">
+                    <p>A hunger for the lost, an injustice I alone have wrought.</p>
+                </div>
+            </article>
+
+            <article class="writing-card" onclick="enlargeCard(this)">
+                <div class="writing-content">
+                    <p>A creature of my own creation follows, an unyielding torment.</p>
+                </div>
+            </article>
+
+            <article class="writing-card" onclick="enlargeCard(this)">
+                <div class="writing-content">
+                    <p>A palace I built, I alone the architect, yet I rot within its golden halls.</p>
+                </div>
+            </article>
+
+            <article class="writing-card" onclick="enlargeCard(this)">
+                <div class="writing-content">
+                    <p>A cold sorrow wraps me, and in its chill my heart almost beats again.</p>
+                </div>
+            </article>
+
+            <article class="writing-card" onclick="enlargeCard(this)">
+                <div class="writing-content">
+                    <p>A feeling, regret; an ache in the body, a plague on the mind, an indent upon the heart.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Modal for enlarged view -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-text"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

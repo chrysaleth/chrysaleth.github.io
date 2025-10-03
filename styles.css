@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: #2a2a2a;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 40px 20px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #e8dcc0;
+    box-shadow: 
+        0 0 0 1px #3a3a3a,
+        0 0 0 2px #2a2a2a,
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 100px rgba(0, 0, 0, 0.05);
+    padding: 50px 40px 50px 60px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d4a574;
+    opacity: 0.6;
+}
+
+header {
+    text-align: center;
+    padding: 0 20px 30px;
+    margin-bottom: 40px;
+    border-bottom: none;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #3a3a3a;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+}
+
+.writings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 0;
+}
+
+.writing-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 29px,
+            rgba(180, 150, 120, 0.3) 29px,
+            rgba(180, 150, 120, 0.3) 30px
+        );
+    line-height: 30px;
+    padding: 3px 0 0 0;
+    background-position: 0 3px;
+}
+
+.writing-card::before {
+    content: '•';
+    position: absolute;
+    left: -30px;
+    top: 3px;
+    color: #5a5a5a;
+    font-size: 1.2rem;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.writing-card:hover {
+    transform: translateX(5px);
+}
+
+.writing-card:hover .writing-content p {
+    color: #2a2a2a;
+}
+
+.writing-content p {
+    font-size: 1.15rem;
+    text-align: left;
+    color: #4a4a4a;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.3px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: #e8dcc0;
+    border: 2px solid #3a3a3a;
+    border-radius: 3px;
+    padding: 50px 70px;
+    max-width: 750px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s;
+    box-shadow: 
+        0 0 0 1px #2a2a2a,
+        0 15px 60px rgba(0, 0, 0, 0.7),
+        inset 0 0 100px rgba(0, 0, 0, 0.05);
+}
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: #d4a574;
+    opacity: 0.4;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #5a5a5a;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #2a2a2a;
+}
+
+#modal-text {
+    font-size: 1.6rem;
+    text-align: left;
+    color: #3a3a3a;
+    font-style: normal;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.3px;
+    font-weight: 300;
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 35px,
+            rgba(180, 150, 120, 0.2) 35px,
+            rgba(180, 150, 120, 0.2) 36px
+        );
+    background-position: 0 4px;
+    padding-top: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .container {
+        padding: 40px 30px 40px 50px;
+    }
+    
+    .container::before {
+        left: 40px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .writings-grid {
+        gap: 25px;
+    }
+    
+    .writing-card::before {
+        left: -25px;
+        line-height: 30px;
+        top: 3px;
+    }
+    
+    .writing-content p {
+        font-size: 1.05rem;
+        line-height: 30px;
+    }
+    
+    .modal-content {
+        padding: 40px 40px 40px 50px;
+        width: 95%;
+    }
+    
+    .modal-content::before {
+        left: 35px;
+    }
+    
+    #modal-text {
+        font-size: 1.3rem;
+        padding-top: 4px;
+        line-height: 36px;
+    }
+}
